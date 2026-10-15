@@ -1,0 +1,35 @@
+{
+  "name": "cilek",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && node scripts/compress.mjs && node scripts/bundle-server.mjs",
+    "start": "node build/server.js",
+    "check": "node scripts/check-bundle.mjs",
+    "fetch-model": "node scripts/fetch-model.mjs",
+    "preview": "npm run build && npm start"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.1.0",
+    "node-turn": "^0.0.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "selfsigned": "^5.5.0",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/ws": "^8.18.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
